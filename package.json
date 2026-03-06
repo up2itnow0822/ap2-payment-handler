@@ -1,0 +1,35 @@
+{
+  "name": "ap2-payment-handler",
+  "version": "1.0.0",
+  "description": "Non-custodial crypto payment handler for the AP2 Agent Payment Protocol. Supports x402, USDC/Base, EIP-712 signing. Zero key escrow.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --testEnvironment=node",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": ["ap2", "agent-payments", "x402", "crypto", "non-custodial", "agentic-commerce", "ai-agents"],
+  "author": "AI Agent Economy <max@ai-agent-economy.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/up2itnow0822/ap2-payment-handler.git"
+  },
+  "dependencies": {
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "@types/jest": "^29.0.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": ["**/src/**/*.test.ts"],
+    "testPathIgnorePatterns": ["/node_modules/", "/dist/"]
+  }
+}
