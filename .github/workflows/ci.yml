@@ -2,20 +2,25 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
   pull_request:
     branches: [main]
 
 jobs:
-  build:
+  test:
+    name: Test (Node ${{ matrix.node }})
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['20.x', '22.x']
     steps:
-      - uses: actions/checkout@v6
-      - name: Use Node.js
-        uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: ${{ matrix.node }}
       - name: Install dependencies
-        run: npm install --if-present || true
+        run: npm install
       - name: Run tests
-        run: npm test --if-present || echo "No tests configured yet"
+        run: npm test
+      - name: Build
+        run: npm run build
