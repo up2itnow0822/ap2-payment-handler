@@ -7,9 +7,18 @@
   "scripts": {
     "build": "tsc",
     "test": "jest --testEnvironment=node",
-    "prepublishOnly": "npm run build && npm test"
+    "prepublishOnly": "npm run build && npm test",
+    "lint": "eslint src/"
   },
-  "keywords": ["ap2", "agent-payments", "x402", "crypto", "non-custodial", "agentic-commerce", "ai-agents"],
+  "keywords": [
+    "ap2",
+    "agent-payments",
+    "x402",
+    "crypto",
+    "non-custodial",
+    "agentic-commerce",
+    "ai-agents"
+  ],
   "author": "AI Agent Economy <max@ai-agent-economy.com>",
   "license": "MIT",
   "repository": {
@@ -20,16 +29,25 @@
     "zod": "^3.22.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
+    "@types/jest": "^30.0.0",
     "@types/node": "^25.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
+    "eslint": "^10.1.0",
+    "globals": "^17.4.0",
     "jest": "^30.3.0",
     "ts-jest": "^29.0.0",
-    "@types/jest": "^30.0.0"
+    "typescript": "^5.0.0"
   },
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "testMatch": ["**/src/**/*.test.ts"],
-    "testPathIgnorePatterns": ["/node_modules/", "/dist/"]
+    "testMatch": [
+      "**/src/**/*.test.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
   }
 }
