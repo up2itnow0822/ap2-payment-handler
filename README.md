@@ -1,3 +1,6 @@
+> [!WARNING]
+> **Paused for security maintenance. Do not use in production.**
+
 # ap2-payment-handler
 
 > Non-custodial crypto payment handler for the AP2 Agent Payment Protocol. The first open-source, zero-escrow AP2 implementation.
