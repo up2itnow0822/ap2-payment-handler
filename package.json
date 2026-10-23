@@ -1,7 +1,7 @@
 {
   "name": "ap2-payment-handler",
-  "version": "1.0.0",
-  "description": "Non-custodial crypto payment handler for the AP2 Agent Payment Protocol. Supports x402, USDC/Base, EIP-712 signing. Zero key escrow.",
+  "version": "1.0.2",
+  "description": "Non-custodial AP2 Agent Payment Protocol mandate handler with x402 header helpers (USDC/Base). Builds mandates; bring your own signer. Zero key escrow.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

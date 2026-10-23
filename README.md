@@ -1,6 +1,3 @@
-> [!WARNING]
-> **Paused for security maintenance. Do not use in production.**
-
 # ap2-payment-handler
 
 > Non-custodial crypto payment handler for the AP2 Agent Payment Protocol. The first open-source, zero-escrow AP2 implementation.
@@ -107,7 +104,10 @@ This package is **zero-escrow** by design:
 - **No private keys stored** — signing is delegated to your wallet/signer
 - **No funds held** — payment proofs reference on-chain transactions
 - **Full audit trail** — every mandate lifecycle step is logged
-- **EIP-712 compatible** — structured signing for human-readable approval
+- **Bring your own signer** — this package does not sign anything itself
+
+> [!IMPORTANT]
+> `handle()` builds and records a payment mandate; it does **not** send, settle, or verify an on-chain payment. `transactionId` is a local reference ID, not an on-chain hash. `buildPaymentProof()` returns an **unsigned** base64 payload, which is not proof of payment. Servers must verify payment on-chain before delivering anything.
 
 All `PaymentMandate` objects carry `isNonCustodial: true` as a type-level guarantee.
 
