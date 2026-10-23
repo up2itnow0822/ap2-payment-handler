@@ -1,3 +1,4 @@
+import { randomUUID } from 'node:crypto';
 import {
   AP2PaymentMethod,
   AP2PaymentRequest,
@@ -9,7 +10,8 @@ import {
 import { validateMandate } from './validation';
 
 function generateId(): string {
-  return Math.random().toString(36).substring(2) + Date.now().toString(36);
+  // Cryptographically random (was Math.random, which is predictable).
+  return randomUUID().replace(/-/g, '');
 }
 
 export class AP2PaymentHandler {

@@ -1,7 +1,9 @@
+import { randomUUID } from 'node:crypto';
 import { AP2PaymentResponse } from './types';
 
 function generateId(): string {
-  return Math.random().toString(36).substring(2) + Date.now().toString(36);
+  // Cryptographically random (was Math.random, which is predictable).
+  return randomUUID().replace(/-/g, '');
 }
 
 export class X402Bridge {
@@ -54,7 +56,9 @@ export class X402Bridge {
       timestamp,
       nonce: generateId(),
     };
-    // In production this would be EIP-712 signed. Here we encode it.
+    // NOTE: this proof is UNSIGNED base64 JSON. It is not a payment and not a
+    // cryptographic proof; servers must verify the on-chain payment themselves.
+    // Sign it with your own wallet/signer (e.g. EIP-712) before relying on it.
     const proof = Buffer.from(JSON.stringify(proofData)).toString('base64');
     return { proof, timestamp };
   }
