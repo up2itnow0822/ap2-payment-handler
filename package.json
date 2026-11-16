@@ -28,6 +28,17 @@
   "dependencies": {
     "zod": "^4.6.7"
   },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "11.0.8"
+    },
+    "glob@^10.0.0": {
+      "minimatch": "11.0.8"
+    },
+    "test-exclude": {
+      "minimatch": "3.1.5"
+    }
+  },
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/node": "^26.6.4",
