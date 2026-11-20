@@ -1,5 +1,7 @@
 # ap2-payment-handler
 
+Paused for security maintenance. Do not use in production.
+
 > Non-custodial crypto payment handler for the AP2 Agent Payment Protocol. The first open-source, zero-escrow AP2 implementation.
 
 [![npm version](https://badge.fury.io/js/ap2-payment-handler.svg)](https://www.npmjs.com/package/ap2-payment-handler)
